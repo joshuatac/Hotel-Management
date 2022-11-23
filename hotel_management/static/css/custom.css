@@ -13,3 +13,9 @@
     animation-name: show-toast;
     animation-duration: 5s;
 }
+
+
+.user-dashboard-login{
+    width: 450px !important;
+    min-height: auto !important;
+}

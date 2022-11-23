@@ -79,6 +79,14 @@ class User(AbstractBaseUser):
         return True
 
 
+    def get_role(self):
+        if self.role == 1:
+            user_role = 'Vendor'
+        elif self.role == 2:
+            user_role = 'Customer'
+        return user_role
+
+
 class UserProfile(models.Model):
     user = OneToOneField(User, on_delete=models.CASCADE, blank=True, null=True)
     profile_picture = models.ImageField(upload_to='users/profile_pictures', blank=True, null=True)
@@ -96,4 +104,7 @@ class UserProfile(models.Model):
 
     def __str__(self):
         return self.user.email
+    
+
+
 
